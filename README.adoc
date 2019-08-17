@@ -1,0 +1,54 @@
+= wtmgr
+
+Package Manager for W32TeX archives, like pacman.
+
+== features
+
+* Download W32TeX archives.
+* Update W32TeX archives.(WIP)
+* Download LaTeX packages.(WIP)
+* Update LaTeX packages.(WIP)
+
+== install
+
+=== require package
+
+* Python 3.x (recommend is 3.7)
+** pipenv
+
+=== install step
+
+. Extract zip file or clone this repogitory on `{W32TeX's directory}/download/` directory.
+. run `pipenv install`
+. make `wtmgr.toml`(e.g. <<wtmgr-toml>>)
+. run wtmgr
+
+.wtmgr.toml
+[[wtmgr-toml]]
+[source, toml]
+----
+[server]
+url = "ftp.core.ring.gr.jp"
+directory = "/pub/text/TeX/ptex-win32/current/"
+
+[packages] 
+packages = []
+----
+
+== usege
+
+=== install W32TeX archive
+
+`python main.py -S {package name}`
+
+but package name is file name that remove extension(`.tar.xz`).
+e.g.(`luatexja.tar.xz` -> `luatexja`)
+
+== loadmap
+
+* transplant to other language
+* implement features
+** Update W32TeX archives
+** Download LaTeX packages
+** Update LaTeX packages
+
